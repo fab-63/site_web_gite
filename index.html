@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Le Côme – Gîte d’exception dans un cadre naturel exceptionnel</title>
+  <meta name="description" content="Le Côme – Gîte pour 10 personnes, proche de Vulcania, au cœur du Parc des Volcans d’Auvergne. Contactez-nous pour votre séjour." />
+  <meta name="format-detection" content="telephone=no" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Le Côme – Gîte d’exception" />
+  <meta property="og:description" content="Gîte pour 10 personnes, proche de Vulcania, Parc des Volcans d’Auvergne." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="photo/image_P.jpeg" />
+  <meta property="og:url" content="https://fab-63.github.io/site_web_gite/" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E🏡%3C/text%3E%3C/svg%3E" />
+  <style>
+    :root{
+      --bg: #0b0b0b;    /* body background */
+      --fg: #101418;    /* card/background */
+      --ink: #0f172a;   /* text dark */
+      --ink-weak:#475569; /* muted */
+      --brand:#0ea5e9;  /* accent */
+      --brand-ink:#0a4d69; /* darker accent for focus */
+      --paper:#ffffff;  /* text light */
+      --radius: 18px;
+      --shadow: 0 10px 20px rgba(0,0,0,.12), 0 6px 6px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--ink);
+      background: linear-gradient(180deg,#f8fafc, #eef2f7);
+      line-height:1.6;
+    }
+    a{color:var(--brand); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1120px;margin-inline:auto;padding:0 20px}
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter:saturate(180%) blur(10px);
+      background: rgba(255,255,255,.75);
+      border-bottom:1px solid #e5e7eb;
+    }
+    .nav{
+      display:flex; align-items:center; gap:16px; justify-content:space-between;
+      padding:10px 0;
+    }
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700}
+    .brand .logo{width:36px;height:36px; display:grid; place-items:center; background:#e2f3fb; border-radius:12px; box-shadow:var(--shadow)}
+    .brand span{font-size:1.1rem}
+    .actions{display:flex; align-items:center; gap:12px}
+    .btn, button.btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      border:1px solid #dbeafe; background:#e0f2fe; color:#0c4a6e;
+      padding:10px 14px; border-radius:14px; font-weight:600; cursor:pointer;
+      transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
+      box-shadow: 0 1px 0 rgba(0,0,0,.05);
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .btn.primary{background:var(--brand); color:white; border-color:#7dd3fc}
+    .btn.primary:hover{box-shadow:var(--shadow)}
+    .lang-switch{border:1px solid #e5e7eb; background:#fff; color:#0f172a}
+
+    /* Hero */
+    .hero{position:relative; overflow:hidden; border-bottom-left-radius: var(--radius); border-bottom-right-radius: var(--radius)}
+    .hero .media{position:relative; height:66vh; min-height:420px; max-height:760px; border-bottom:1px solid #e5e7eb}
+    .hero img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter: saturate(105%) contrast(102%)}
+    .hero .overlay{position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.35))}
+    .hero .content{position:absolute; inset:0; display:grid; place-items:center; text-align:center; color:#fff; padding:24px}
+    .hero h1{font-size: clamp(2rem, 3.4vw + 1rem, 3.4rem); margin:0 0 8px 0; letter-spacing:.4px}
+    .hero p{font-size: clamp(1rem, .8vw + .6rem, 1.3rem); opacity:.95; margin:0 0 18px}
+    .hero .cta{display:flex; gap:10px; justify-content:center; flex-wrap:wrap}
+
+    /* Sections */
+    section{padding:56px 0}
+    .cards{display:grid; grid-template-columns: repeat(12, 1fr); gap:16px}
+    .card{grid-column: span 12; background:#fff; border:1px solid #e5e7eb; border-radius:var(--radius); padding:20px; box-shadow:var(--shadow)}
+    .card.compact{padding:16px}
+    @media(min-width:720px){ .card{grid-column: span 4} }
+
+    /* Contact */
+    .contact{
+      display:grid; gap:18px; grid-template-columns:1fr; align-items:start
+    }
+    @media(min-width:860px){
+      .contact{grid-template-columns: 1.2fr .8fr}
+    }
+    .info{background:#fff; border:1px solid #e5e7eb; border-radius:var(--radius); padding:20px; box-shadow:var(--shadow)}
+    .info dl{display:grid; grid-template-columns: max-content 1fr; gap:8px 16px; margin:0}
+    .info dt{font-weight:700}
+    .info dd{margin:0}
+
+    /* Footer */
+    footer{border-top:1px solid #e5e7eb; background:#fbfdff; color:#334155}
+    footer .foot{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:18px 0; font-size:.95rem}
+    .muted{color:#64748b}
+
+    /* Lang helpers */
+    [data-lang]{display:none}
+    :root[data-ui-lang="fr"] [data-lang="fr"],
+    :root[data-ui-lang="en"] [data-lang="en"]{display:initial}
+  </style>
+  <script>
+    // Simple FR/EN toggle without dependencies
+    document.documentElement.setAttribute('data-ui-lang', localStorage.getItem('ui-lang') || 'fr');
+    function setLang(lang){
+      document.documentElement.setAttribute('data-ui-lang', lang);
+      localStorage.setItem('ui-lang', lang);
+    }
+  </script>
+  <!-- Schema.org for a lodging business -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Le Côme",
+    "description": "Gîte pour 10 personnes, proche de Vulcania, dans le Parc des Volcans d’Auvergne.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "6 Rue des toblancs",
+      "addressLocality": "Saint Ours",
+      "postalCode": "63230",
+      "addressCountry": "FR"
+    },
+    "telephone": "+33 6 74 92 56 13",
+    "image": ["photo/image_P.jpeg"],
+    "areaServed": "Auvergne",
+    "url": "https://fab-63.github.io/site_web_gite/"
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand" aria-label="Le Côme">
+        <div class="logo" aria-hidden="true">🏡</div>
+        <span>Le Côme</span>
+      </div>
+      <nav class="actions" aria-label="Navigation principale">
+        <a class="btn" href="#atouts" data-lang="fr">Atouts</a>
+        <a class="btn" href="#atouts" data-lang="en">Highlights</a>
+        <a class="btn" href="#contact" data-lang="fr">Contact</a>
+        <a class="btn" href="#contact" data-lang="en">Contact</a>
+        <button class="btn lang-switch" onclick="setLang('fr')" aria-label="Passer en français">FR</button>
+        <button class="btn lang-switch" onclick="setLang('en')" aria-label="Switch to English">EN</button>
+        <a class="btn primary" href="#contact" data-lang="fr">Nous contacter</a>
+        <a class="btn primary" href="#contact" data-lang="en">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-label="Image d’en-tête">
+      <div class="media">
+        <!-- Replace with your optimized WebP later: photo/image_P.webp -->
+        <img src="photo/image_P.jpeg" alt="Le Côme – gîte niché dans un cadre naturel en Auvergne" width="1920" height="1080" loading="eager" />
+        <div class="overlay" aria-hidden="true"></div>
+      </div>
+      <div class="content">
+        <div>
+          <h1 data-lang="fr">Un gîte d’exception dans un cadre naturel exceptionnel</h1>
+          <h1 data-lang="en">An exceptional holiday home in a stunning natural setting</h1>
+          <p data-lang="fr">Proche de Vulcania, au cœur du Parc des Volcans d’Auvergne – 10 personnes</p>
+          <p data-lang="en">Near Vulcania, in the Auvergne Volcanoes Regional Park – up to 10 guests</p>
+          <div class="cta">
+            <a class="btn primary" href="#contact" data-lang="fr">Nous contacter</a>
+            <a class="btn primary" href="#contact" data-lang="en">Contact us</a>
+            <a class="btn" href="#atouts" data-lang="fr">Découvrir les atouts</a>
+            <a class="btn" href="#atouts" data-lang="en">See the highlights</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS / ATOUTS -->
+    <section id="atouts" class="container" aria-label="Atouts">
+      <div class="cards" role="list">
+        <article class="card compact" role="listitem">
+          <h3 data-lang="fr">Proche de Vulcania</h3>
+          <h3 data-lang="en">Close to Vulcania</h3>
+          <p data-lang="fr">Explorez le célèbre parc Vulcania à quelques minutes du gîte.</p>
+          <p data-lang="en">Visit the renowned Vulcania park just a short drive away.</p>
+        </article>
+        <article class="card compact" role="listitem">
+          <h3 data-lang="fr">Parc des Volcans d’Auvergne</h3>
+          <h3 data-lang="en">Auvergne Volcanoes Park</h3>
+          <p data-lang="fr">Séjournez au cœur d’un cadre naturel préservé et grandiose.</p>
+          <p data-lang="en">Stay in the heart of a breathtaking and preserved natural area.</p>
+        </article>
+        <article class="card compact" role="listitem">
+          <h3 data-lang="fr">Jusqu’à 10 personnes</h3>
+          <h3 data-lang="en">Up to 10 guests</h3>
+          <p data-lang="fr">Idéal pour les familles et les groupes, confort et espace garantis.</p>
+          <p data-lang="en">Perfect for families and groups, with comfort and plenty of space.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT (placeholder minimal) -->
+    <section class="container" aria-label="À propos">
+      <div class="card">
+        <h2 data-lang="fr">Bienvenue au gîte “Le Côme”</h2>
+        <h2 data-lang="en">Welcome to “Le Côme”</h2>
+        <p data-lang="fr">Un point de chute idéal pour découvrir l’Auvergne, ses volcans, ses lacs et ses villages. Nous peaufinerons cette section après la page d’accueil (photos, description détaillée, équipements, accès, etc.).</p>
+        <p data-lang="en">A perfect base to explore Auvergne, its volcanoes, lakes and villages. We’ll refine this section later with photos, detailed description, amenities and access.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container" aria-label="Contact">
+      <div class="contact">
+        <div class="info">
+          <h2 data-lang="fr">Nous contacter</h2>
+          <h2 data-lang="en">Get in touch</h2>
+          <p data-lang="fr" class="muted">Chantal et Fabrice ROSSI</p>
+          <p data-lang="en" class="muted">Chantal and Fabrice ROSSI</p>
+          <dl>
+            <dt data-lang="fr">Adresse</dt>
+            <dt data-lang="en">Address</dt>
+            <dd>6 Rue des toblancs, 63230 Saint Ours, France</dd>
+
+            <dt data-lang="fr">Téléphone</dt>
+            <dt data-lang="en">Phone</dt>
+            <dd><a href="tel:+33674925613" rel="nofollow">06 74 92 56 13</a></dd>
+
+            <dt>Email</dt>
+            <dd><a href="mailto:fabrice.rossi63@gmail.com">fabrice.rossi63@gmail.com</a></dd>
+          </dl>
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+            <a class="btn primary" href="mailto:fabrice.rossi63@gmail.com" data-lang="fr">Écrire un email</a>
+            <a class="btn primary" href="mailto:fabrice.rossi63@gmail.com" data-lang="en">Send an email</a>
+            <a class="btn" href="tel:+33674925613" data-lang="fr">Appeler</a>
+            <a class="btn" href="tel:+33674925613" data-lang="en">Call</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3 data-lang="fr">Formulaire (optionnel)</h3>
+          <h3 data-lang="en">Form (optional)</h3>
+          <p data-lang="fr" class="muted">On pourra ajouter un formulaire simple (Netlify Forms, Formspree, ou GitHub Actions) si tu veux recevoir les demandes directement via le site.</p>
+          <p data-lang="en" class="muted">We can add a simple form (Netlify Forms, Formspree, or GitHub Actions) if you want to receive requests directly.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <div>
+        <strong>Le Côme</strong> — <span data-lang="fr">Gîte d’exception en Auvergne</span><span data-lang="en">Exceptional holiday home in Auvergne</span>
+      </div>
+      <div class="muted">© <span id="year"></span> Le Côme</div>
+    </div>
+  </footer>
+
+  <script>
+    // Current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Reduce CLS for the hero by waiting image ready
+    const heroImg = document.querySelector('.hero img');
+    heroImg?.addEventListener('load', () => heroImg.style.opacity = 1);
+  </script>
+</body>
+</html>
