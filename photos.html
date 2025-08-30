@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Photos – Le Côme, Gîte en Auvergne</title>
+  <meta name="description" content="Galerie photos du gîte Le Côme (aperçu).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{ --green:#2E8B57; --beige:#F5F5DC; --text:#222; --gray:#e7e9ee; --header-h:240px; --sidebar-w:220px; --radius:14px; --shadow:0 10px 20px rgba(0,0,0,.08),0 2px 6px rgba(0,0,0,.06); }
+    @media (max-width:900px){ :root{ --header-h:160px; --sidebar-w:0px; } }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:'Open Sans',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:var(--text);background:#fafbfc;line-height:1.6}
+    h1,h2,h3{font-family:'Montserrat','Open Sans',Arial,sans-serif;color:#14302a;margin:0 0 .5em}
+    a{color:#0a6375;text-decoration:none} a:hover{text-decoration:underline}
+    /* Skip link */
+    .skip-link{position:absolute;left:12px;top:12px;z-index:1100;padding:6px 10px;background:#fff;border:2px dashed #0ea5e9;border-radius:10px;transform:translateY(-200%)}
+    .skip-link:focus{transform:translateY(0);outline:none}
+    /* Header */
+    header.site-header{position:fixed;inset:0 0 auto 0;height:var(--header-h);z-index:1000;color:#fff;display:grid;align-content:end;padding:18px 18px 20px 18px;background-position:center;background-size:cover;background-repeat:no-repeat;
+      background-image:image-set(url('photo/Image_P.webp') type('image/webp') 1x, url('photo/Image_P.jpg') type('image/jpeg') 1x);
+      background-color:#1f2937;
+    }
+    header.site-header::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.30),rgba(0,0,0,.45))}
+    .header-inner{display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+    .brand{display:grid;gap:6px}
+    .brand-title{font-weight:700;letter-spacing:.4px}
+    .brand-sub{opacity:.95;font-weight:600}
+    .hamburger{display:none;align-self:flex-start;background:rgba(255,255,255,.85);color:#0f172a;border:1px solid rgba(255,255,255,.7);border-radius:12px;padding:8px 10px;box-shadow:var(--shadow)}
+    @media (max-width:900px){ .hamburger{display:inline-flex} }
+    .hamburger:focus-visible{outline:3px solid #0ea5e9;outline-offset:2px}
+    /* Sidebar */
+    nav.sidebar{position:fixed;top:var(--header-h);left:0;bottom:0;z-index:900;width:220px;background:#fff;border-right:1px solid var(--gray);padding:14px;overflow-y:auto;box-shadow:var(--shadow)}
+    .menu{display:grid;gap:8px}
+    .menu a{display:block;padding:10px 12px;border:1px solid var(--gray);border-radius:10px;background:#fdfdfd;font-weight:600}
+    .menu a:hover{background:#f7faf7}
+    .menu a.active{background:#eef7f1;border-color:#c9e6d2;box-shadow:inset 0 0 0 2px rgba(46,139,87,.12)}
+    @media (max-width:900px){ nav.sidebar{transform:translateX(-100%);transition:transform .2s ease} :root[data-sidebar-open="true"] nav.sidebar{transform:translateX(0)}
+      .scrim{position:fixed;inset:var(--header-h) 0 0 0;background:rgba(0,0,0,.35);z-index:850;display:none}
+      :root[data-sidebar-open="true"] .scrim{display:block}
+    }
+    /* Main */
+    main#main{position:relative;margin-top:var(--header-h);margin-left:var(--sidebar-w);padding:20px 24px;min-height:calc(100vh - var(--header-h))}
+    @media (max-width:900px){ main#main{margin-left:0} }
+    .card{background:#fff;border:1px solid var(--gray);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+    /* Photos grid */
+    .photo-grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .photo-grid img{width:100%;height:auto;border-radius:10px;border:1px solid var(--gray)}
+    /* Footer */
+    footer{padding:16px 24px;border-top:1px solid var(--gray);color:#56616d;background:#ffffff}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Passer au contenu</a>
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-title">Le Côme – Gîte</div>
+        <div class="brand-sub">Un gîte d’exception dans un cadre naturel exceptionnel</div>
+      </div>
+      <button id="menuToggle" class="hamburger" aria-controls="sidebar" aria-expanded="false" aria-label="Ouvrir le menu">☰ Menu</button>
+    </div>
+  </header>
+  <nav id="sidebar" class="sidebar" aria-label="Navigation" role="navigation">
+    <div class="menu">
+      <a href="description.html" class="">Description</a>
+      <a href="photos.html" class="active">Photos</a>
+      <a href="contact.html" class="">Contact</a>
+      <a href="video.html" class="">Vidéo</a>
+    </div>
+  </nav>
+  <div class="scrim" hidden></div>
+  <main id="main" tabindex="-1">
+    <div class="card">
+<h1>Photos</h1><p>Voici un aperçu (placeholders). Remplacez ces images par vos photos réelles.</p><div class="photo-grid"><img src="https://via.placeholder.com/800x600?text=Photo+1" alt="Photo placeholder 1">
+<img src="https://via.placeholder.com/800x600?text=Photo+2" alt="Photo placeholder 2">
+<img src="https://via.placeholder.com/800x600?text=Photo+3" alt="Photo placeholder 3">
+<img src="https://via.placeholder.com/800x600?text=Photo+4" alt="Photo placeholder 4">
+<img src="https://via.placeholder.com/800x600?text=Photo+5" alt="Photo placeholder 5">
+<img src="https://via.placeholder.com/800x600?text=Photo+6" alt="Photo placeholder 6"></div>    </div>
+  </main>
+  <footer role="contentinfo">
+    Contact — Tél : <a href="tel:+33674925613">06 74 92 56 13</a> · Email : <a href="mailto:fabrice.rossi63@gmail.com">fabrice.rossi63@gmail.com</a>
+  </footer>
+  <script>
+    (function(){
+      const root=document.documentElement;
+      const menuToggle=document.getElementById('menuToggle');
+      const scrim=document.querySelector('.scrim');
+      function openSidebar(){ root.setAttribute('data-sidebar-open','true'); menuToggle.setAttribute('aria-expanded','true'); scrim.removeAttribute('hidden'); }
+      function closeSidebar(){ root.removeAttribute('data-sidebar-open'); menuToggle.setAttribute('aria-expanded','false'); scrim.setAttribute('hidden',''); }
+      menuToggle?.addEventListener('click',()=>{ const exp=menuToggle.getAttribute('aria-expanded')==='true'; exp?closeSidebar():openSidebar(); });
+      scrim?.addEventListener('click', closeSidebar);
+    })();
+  </script>
+</body>
+</html>
